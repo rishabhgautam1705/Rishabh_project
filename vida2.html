@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The All New VX2 Plus - Redefine Your Urban Ride</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a light, soothing theme */
+        :root {
+            --primary-yellow: #FACC15; /* Tailwind yellow-400/500 */
+            --secondary-teal: #2DD4BF; /* Tailwind teal-400 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Light sky-blue background */
+            color: #1e293b; /* Dark slate gray text */
+            scroll-behavior: smooth;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+            font-weight: 700;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.18);
+        }
+        /* Style for the media container */
+        #feature-media-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff); /* Gentle blue fade */
+            overflow: hidden; /* Ensure media fits */
+        }
+        /* Mobile sticky CTA bar */
+        #mobile-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+
+        /* Color selector styles */
+        .color-option {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+        .color-option:hover {
+            transform: scale(1.1);
+            border-color: #94a3b8;
+        }
+        .color-option.selected {
+            border: 3px solid var(--primary-yellow);
+            transform: scale(1.15);
+        }
+
+        /* Liquid Glass Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.4),
+                        0 0 30px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+        }
+
+        /* For smooth scooter image transition */
+        #scooter-image, #feature-scooter-image {
+            transition: opacity 0.4s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-40 glass-effect shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-yellow-400 tracking-wider">VX2<span class="text-gray-800 font-light">PLUS</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-800">
+                <a href="#features" class="hover:text-yellow-400 transition">Features</a>
+                <a href="#baas" class="hover:text-yellow-400 transition">BaaS</a>
+                <a href="#gallery" class="hover:text-yellow-400 transition">Gallery</a>
+                <a href="#pricing" class="hover:text-yellow-400 transition">Pricing</a>
+                <a href="#test-ride" class="cta-button bg-teal-500 text-gray-900 px-4 py-2 rounded-lg hover:bg-teal-400">Book Test Ride</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-effect shadow-xl py-4 transition-all duration-300">
+            <a href="#features" class="block px-4 py-2 hover:bg-gray-100 transition text-gray-800">Features</a>
+            <a href="#baas" class="block px-4 py-2 hover:bg-gray-100 transition text-gray-800">BaaS</a>
+            <a href="#gallery" class="block px-4 py-2 hover:bg-gray-100 transition text-gray-800">Gallery</a>
+            <a href="#pricing" class="block px-4 py-2 hover:bg-gray-100 transition text-gray-800">Pricing</a>
+            <a href="#test-ride" class="block px-4 py-2 mt-2 bg-teal-500 text-gray-900 font-medium hover:bg-teal-400 transition">Book Test Ride</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative bg-sky-50 pt-16 pb-20 overflow-hidden">
+            <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/0F172A/FACC15?text=VX2+Plus+Urban+Ride');"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 text-center lg:text-left py-16 lg:py-32">
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-tight text-gray-900 text-3d">
+                        The all new <span class="text-yellow-400">VX2 Plus</span>
+
+                 </h1>
+                    <div class="mt-20 text-2xl font-semibold">
+                        <p>Introductory price <span class="text-teal-400">starting at ₹82,790*</span></p>
+                        <p class="text-lg text-gray-600 mt-2">With BaaS at <span class="font-bold text-yellow-400">₹57,990*</span></p>
+                    </div>
+
+                    <div class="mt-10 flex justify-center lg:justify-start space-x-4">
+                        <a href="#test-ride" class="cta-button bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl text-lg hover:bg-yellow-300 shadow-xl">Book Your Test Ride Today!</a>
+                        <a href="#baas" class="cta-button border border-gray-400 text-gray-800 px-8 py-4 rounded-xl text-lg hover:bg-yellow-100 hidden sm:inline-block">Learn More About BaaS</a>
+
+                    </div>
+
+                </div>
+                <div class="lg:w-1/2 mt-10 lg:mt-0">
+                    <video id="scooter-video" class="rounded-xl w-full h-auto object-cover transform hover:scale-105 transition duration-500" autoplay muted loop playsinline>
+                        <source src= Vidavideo.mp4 type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img id="scooter-image" src="" alt="VX2 Plus Scooter" class="transform hover:scale-105 transition duration-500 hidden">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-sky-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-teal-400">Engineered for the Modern Commuter</h2>
+
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/3 space-y-8">
+                        <div id="feature-performance" class="p-6 rounded-xl bg-white border-l-4 border-yellow-400 transition hover:bg-sky-50 cursor-pointer" onclick="updateFeature('performance')">
+                            <h3 class="text-2xl font-bold text-gray-800">Instant Torque & Performance</h3>
+                            <p class="mt-2 text-gray-600 text-lg">Experience exhilarating acceleration. From 0 to 40 km/h in just 4 seconds, perfect for urban sprints.</p>
+                        </div>
+                        <div id="feature-display" class="p-6 rounded-xl bg-white border-l-4 border-transparent transition hover:bg-sky-50 cursor-pointer" onclick="updateFeature('display')">
+                            <h3 class="text-2xl font-bold text-gray-800">Intelligent Digital Display</h3>
+                            <p class="mt-2 text-gray-600 text-lg">Stay connected and informed with vibrant navigation, ride stats, and battery health—all at a glance.</p>
+                        </div>
+                        <div id="feature-comfort" class="p-6 rounded-xl bg-white border-l-4 border-transparent transition hover:bg-sky-50 cursor-pointer" onclick="updateFeature('comfort')">
+                            <h3 class="text-2xl font-bold text-gray-800">Ergonomic Design & Comfort</h3>
+                            <p class="mt-2 text-gray-600 text-lg">Spacious seating and advanced suspension for a smooth, enjoyable journey every time.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/3 space-y-6 glass-effect p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 text-center mb-4">Choose Your Color</h3>
+                        <div class="grid grid-cols-3 gap-4 justify-items-center">
+                            <div class="color-option" data-color="#0f172a" title="Pearl Black" style="background-color:#0f172a;"></div>
+                            <div class="color-option" data-color="#2563eb" title="Nexus Blue" style="background-color:#2563eb;"></div>
+                            <div class="color-option" data-color="#b91c1c" title="Pearl Red" style="background-color:#b91c1c;"></div>
+                            <div class="color-option" data-color="#f8fafc" title="Matte White" style="background-color:#f8fafc;border:1px solid #cbd5e1;"></div>
+                            <div class="color-option" data-color="#64748b" title="Metallic Grey" style="background-color:#64748b;"></div>
+                            <div class="color-option" data-color="#ea580c" title="Autumn Orange" style="background-color:#ea580c;"></div>
+                            <div class="color-option" data-color="#facc15" title="Sunburst Yellow" style="background-color:#facc15;"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/3">
+                        <div id="feature-media-container">
+                            <video id="feature-scooter-video" 
+                                class="rounded-xl w-full h-full object-cover shadow-lg" 
+                                autoplay muted loop playsinline>
+                                <source src="Scooter_Rotation_Video_Generation.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img id="feature-scooter-image" src="" alt="VX2 Plus Scooter" class="rounded-xl w-full h-full object-cover shadow-lg hidden">
+                        </div>
+
+                        <p id="feature-description" class="text-center mt-4 text-xl font-medium text-yellow-400">Hover or click a feature to highlight its part on the scooter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="baas" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-yellow-400">Revolutionary BaaS: Ride More, Pay Less</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-lg border-t-4 border-teal-500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2m-6-10H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2h-3m-6 4a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h3 class="text-2xl font-bold text-gray-800">Lower Upfront Cost</h3>
+                        <p class="mt-2 text-gray-600">Own the VX2 Plus for just **₹57,990***. Maximize your savings from day one.</p>
+                    </div>
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-lg border-t-4 border-teal-500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        <h3 class="text-2xl font-bold text-gray-800">Zero Degradation Worry</h3>
+                        <p class="mt-2 text-gray-600">Always ride with a fresh, high-performance battery. We handle the aging.</p>
+                    </div>
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-lg border-t-4 border-teal-500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3v-1m18-10V4a2 2 0 00-2-2h-5.586a1 1 0 00-.707.293l-4.414 4.414a1 1 0 00-.293.707V9M18 9h-5.586a1 1 0 01-.707-.293l-4.414-4.414a1 1 0 01-.293-.707V4"></path></svg>
+                        <h3 class="text-2xl font-bold text-gray-800">Instant Swaps</h3>
+                        <p class="mt-2 text-gray-600">No charging downtime. Swap a depleted battery for a fully charged one in minutes.</p>
+                    </div>
+                </div>
+
+                <div class="mt-20 grid lg:grid-cols-2 gap-12">
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6 text-yellow-400">Calculate Your Savings</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="daily-kms" class="block text-lg font-medium mb-2 text-gray-800">Average Daily Travel (km)</label>
+                                <input type="range" id="daily-kms" min="5" max="50" value="20" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer">
+                                <p class="text-right text-teal-400"><span id="kms-value">20</span> km</p>
+                            </div>
+                            <div>
+                                <label for="fuel-price" class="block text-lg font-medium mb-2 text-gray-800">Current Fuel Price (₹ per liter)</label>
+                                <input type="range" id="fuel-price" min="80" max="120" step="5" value="100" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer">
+                                <p class="text-right text-teal-400">₹<span id="fuel-value">100</span></p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-sky-200">
+                            <p class="text-xl font-medium text-gray-800">Estimated Monthly Savings:</p>
+                            <p class="text-4xl font-extrabold text-yellow-400 mt-1">₹<span id="monthly-savings">2,500</span></p>
+                            <p class="text-lg text-gray-600 mt-2">*Based on a 150cc scooter at 40 kmpl. Savings are approximate.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6 text-yellow-400">Locate Your Nearest Swap Station</h3>
+                        
+                        <div class="flex gap-2 mb-4">
+                            <input type="text" id="city-search-input" placeholder="Enter City (e.g., Delhi, Bangalore)" 
+                                class="flex-1 bg-sky-200 text-gray-800 px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 outline-none" required>
+                            <button id="search-location-btn" class="cta-button bg-teal-500 text-gray-900 px-4 py-3 rounded-lg hover:bg-teal-400 flex-shrink-0">Search Stations</button>
+                        </div>
+
+                        <div id="swap-map" class="w-full h-72 bg-sky-200 rounded-xl p-4 overflow-y-auto text-left">
+                            <p class="text-gray-600 text-lg text-center p-8">Search a city above to find the nearest EV swapping or charging stations in India.</p>
+                        </div>
+                        
+                        <div id="map-message" class="text-sm mt-3 text-teal-400"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-20 bg-sky-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-teal-400">Designed to Impress, Built to Perform</h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <img src= Gemini_Generated_Image_cji6v0cji6v0cji6.png alt="VX2 Plus Side Profile" class="rounded-xl object-cover w-full h-full hover:opacity-80 transition duration-300">
+                    <img src= BootSpaceIMG.png alt="VX2 Plus Dashboard" class="rounded-xl object-cover w-full h-full hover:opacity-80 transition duration-300">
+                    <img src= Fk.png alt="VX2 Plus Urban Commute" class="rounded-xl object-cover w-full h-full hover:opacity-80 transition duration-300">
+                    <img src= spec-lllustration-desktop.webp alt="VX2 Plus Front View" class="rounded-xl object-cover w-full h-full hover:opacity-80 transition duration-300 md:col-span-2">
+                    <img src= Stat.webp alt="VX2 Plus LED Lights" class="rounded-xl object-cover w-full h-full hover:opacity-80 transition duration-300">
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-yellow-400">Your Path to Electric Riding Starts Here</h2>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="p-8 bg-sky-50 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6 text-teal-400">Pricing Options</h3>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-sky-200">
+                                    <th class="py-3 text-lg font-semibold text-gray-800">Option</th>
+                                    <th class="py-3 text-lg font-semibold text-gray-800">Upfront Cost</th>
+                                    <th class="py-3 text-lg font-semibold text-gray-800">Battery</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-sky-200">
+                                    <td class="py-4 font-bold text-xl text-gray-900">Standard Purchase</td>
+                                    <td class="py-4 text-yellow-400 font-bold">₹82,790*</td>
+                                    <td class="py-4 text-gray-800">Owned</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 font-bold text-xl text-gray-900">BaaS Model</td>
+                                    <td class="py-4 text-teal-400 font-bold">₹57,990*</td>
+                                    <td class="py-4 text-gray-800">Subscription</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 class="text-2xl font-bold mt-10 mb-4 text-gray-800">EMI Calculator</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="down-payment" class="block text-lg font-medium mb-2 text-gray-800">Down Payment (₹)</label>
+                                <input type="range" id="down-payment" min="5000" max="30000" step="500" value="10000" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer">
+                                <p class="text-right text-teal-400">₹<span id="dp-value">10,000</span></p>
+                            </div>
+                            <div>
+                                <label for="tenure" class="block text-lg font-medium mb-2 text-gray-800">Tenure (Months)</label>
+                                <input type="range" id="tenure" min="6" max="36" step="6" value="12" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer">
+                                <p class="text-right text-teal-400"><span id="tenure-value">12</span> Months</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-sky-200">
+                            <p class="text-xl font-medium text-gray-800">Estimated Monthly EMI:</p>
+                            <p class="text-4xl font-extrabold text-yellow-400 mt-1">₹<span id="monthly-emi">4,232</span></p>
+                        </div>
+                    </div>
+
+                    <div id="test-ride" class="p-8 bg-sky-50 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6 text-yellow-400">Ready to Ride the Future?</h3>
+                        <form id="interest-form" class="space-y-4">
+                            <div>
+                                <label for="full-name" class="block font-medium mb-1 text-gray-800">Full Name</label>
+                                <input type="text" id="full-name" required class="w-full p-3 rounded-lg bg-sky-200 border border-gray-300 focus:border-teal-400 outline-none text-gray-800">
+                            </div>
+                            <div>
+                                <label for="email" class="block font-medium mb-1 text-gray-800">Email Address</label>
+                                <input type="email" id="email" required class="w-full p-3 rounded-lg bg-sky-200 border border-gray-300 focus:border-teal-400 outline-none text-gray-800">
+                            </div>
+                            <div>
+                                <label for="phone" class="block font-medium mb-1 text-gray-800">Phone Number</label>
+                                <input type="tel" id="phone" required class="w-full p-3 rounded-lg bg-sky-200 border border-gray-300 focus:border-teal-400 outline-none text-gray-800">
+                            </div>
+                            <div>
+                                <label for="city" class="block font-medium mb-1 text-gray-800">Preferred City for Test Ride</label>
+                                <select id="city" required class="w-full p-3 rounded-lg bg-sky-200 border border-gray-300 focus:border-teal-400 outline-none text-gray-800">
+                                    <option value="" disabled selected>Select a city</option>
+                                    <option value="Bangalore">Bangalore</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="t-and-c" required class="w-4 h-4 text-teal-500 bg-sky-200 rounded border-gray-300 focus:ring-teal-500">
+                                <label for="t-and-c" class="ml-2 text-sm text-gray-600">I agree to the Terms & Conditions.</label>
+                            </div>
+                            <button type="submit" class="cta-button w-full bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg text-lg hover:bg-yellow-300 transition duration-300">Submit Interest</button>
+                        </form>
+                        <div id="form-message" class="mt-4 text-center font-bold text-lg hidden"></div>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-12">*Prices are Ex-showroom, inclusive of FAME-II subsidy (where applicable), and may vary by state.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect border-t border-sky-200 pt-10 pb-28 sm:pb-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="text-3xl font-extrabold text-yellow-400 tracking-wider">VX2<span class="text-gray-800 font-light">PLUS</span></a>
+                    <p class="text-sm text-gray-600 mt-2">Redefining Urban Mobility.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><a href="#features" class="hover:text-yellow-400">Features</a></li>
+                        <li><a href="#baas" class="hover:text-yellow-400">BaaS Model</a></li>
+                        <li><a href="#gallery" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="#pricing" class="hover:text-yellow-400">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><a href="#" class="hover:text-yellow-400">FAQs</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Connect</h4>
+                    <p class="text-sm text-gray-700">Email: info@vx2plus.com</p>
+                    <p class="text-sm text-gray-700">Phone: +91-XXX-XXXX-XXX</p>
+                    <div class="flex space-x-3 mt-4">
+                        <svg class="w-6 h-6 text-gray-400 hover:text-yellow-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.202 0-4.192 1.636-4.192 4.615v3.385z"/></svg>
+                        <svg class="w-6 h-6 text-gray-400 hover:text-yellow-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.666 4.92 4.92.058 1.265.069 1.645.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.668-4.772-4.92-4.92-1.265-.058-1.644-.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.252-.149-4.771-1.668-4.92-4.92-.058-1.265-.069-1.645-.069-4.849 0-3.203.012-3.583.069-4.848.149-3.252 1.667-4.772 4.92-4.92 1.264-.058 1.644-.069 4.848-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.357-.2 6.78-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.199-4.358-2.618-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4c0 2.21-1.791 4-4 4zm6.479-11.854c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2z"/></svg>
+                        <svg class="w-6 h-6 text-gray-400 hover:text-yellow-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.796-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.203-10.124-5.183-1.077 1.858-.5 4.354 1.492 5.514-.813-.024-1.57-.267-2.242-.615v.08c0 2.668 1.897 4.88 4.394 5.392-.432.123-.872.164-1.332.164-.29 0-.546-.025-.808-.076.741 2.319 2.91 3.96 5.46 4.004-1.986 1.554-4.515 2.484-7.29 2.484-.447 0-.895-.03-1.334-.079 2.05 1.352 4.5 2.138 7.155 2.138 8.57 0 13.34-7.499 13.34-13.34 0-.196-.005-.389-.014-.581.914-.657 1.7-1.477 2.323-2.41z"/></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm text-gray-500 border-t border-sky-200 pt-8">
+                &copy; 2024 VX2 Plus. All Rights Reserved. | Designed with ⚡.
+            </div>
+        </footer>
+
+    <div id="mobile-cta-bar" class="md:hidden glass-effect border-t border-sky-200 p-3 shadow-2xl">
+        <a href="#test-ride" class="cta-button w-full block text-center bg-yellow-400 text-gray-900 py-3 rounded-lg text-lg hover:bg-yellow-300">I'm Interested - Book Now!</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Navbar and Mobile Menu Logic ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when a link is clicked (for smooth scrolling)
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- 2. Feature Highlight Logic (Simulated Hotspots) ---
+            window.updateFeature = (feature) => {
+                const desc = document.getElementById('feature-description');
+                const features = {
+                    performance: { text: "Focusing on the high-performance battery and motor components.", color: '#FACC15' }, // yellow
+                    display: { text: "Highlighting the integrated intelligent digital console.", color: '#2DD4BF' }, // teal
+                    comfort: { text: "Showcasing the ergonomic seat and advanced suspension system.", color: '#FFFFFF' } // white
+                };
+
+                // Update description text and color
+                if (features[feature]) {
+                    desc.textContent = features[feature].text;
+                    desc.style.color = features[feature].color;
+                }
+
+                // Reset all feature card borders
+                document.querySelectorAll('#features .p-6').forEach(el => {
+                    el.classList.remove('border-yellow-400', 'border-teal-400', 'border-white');
+                    el.classList.add('border-transparent');
+                });
+
+                // Highlight the active feature card
+                const activeEl = document.getElementById(`feature-${feature}`);
+                if (activeEl) {
+                    activeEl.classList.remove('border-transparent');
+                    // Use primary yellow for active state
+                    activeEl.classList.add('border-yellow-400');
+                }
+
+                // In a real application, you would change a visual aspect of the video/image here.
+            };
+
+            // Set initial feature highlight
+            updateFeature('performance');
+
+
+            // --- 3. BaaS Savings Calculator Logic ---
+            const dailyKmsInput = document.getElementById('daily-kms');
+            const fuelPriceInput = document.getElementById('fuel-price');
+            const kmsValueSpan = document.getElementById('kms-value');
+            const fuelValueSpan = document.getElementById('fuel-value');
+            const monthlySavingsSpan = document.getElementById('monthly-savings');
+
+            function calculateSavings() {
+                const kmsPerDay = parseInt(dailyKmsInput.value);
+                const fuelPrice = parseInt(fuelPriceInput.value);
+                
+                kmsValueSpan.textContent = kmsPerDay;
+                fuelValueSpan.textContent = fuelPrice;
+
+                // Assumptions:
+                // Conventional Scooter (150cc): 40 km/L
+                // VX2 Plus (Electric): Negligible running cost compared to petrol
+                // Days per month: 25
+
+                const petrolConsumptionPerDay = kmsPerDay / 40;
+                const petrolCostPerDay = petrolConsumptionPerDay * fuelPrice;
+                const monthlySavings = Math.round(petrolCostPerDay * 25);
+
+                monthlySavingsSpan.textContent = monthlySavings.toLocaleString('en-IN');
+            }
+
+            dailyKmsInput.addEventListener('input', calculateSavings);
+            fuelPriceInput.addEventListener('input', calculateSavings);
+            calculateSavings(); // Initial calculation
+
+
+            // --- 4. EMI Calculator Logic ---
+            const standardPrice = 82790; // Price for calculation base
+            const baasPrice = 57990; // BaaS upfront price
+            const dpInput = document.getElementById('down-payment');
+            const tenureInput = document.getElementById('tenure');
+            const dpValueSpan = document.getElementById('dp-value');
+            const tenureValueSpan = document.getElementById('tenure-value');
+            const monthlyEmiSpan = document.getElementById('monthly-emi');
+            const annualInterestRate = 0.12; // 12% annual rate
+
+            function calculateEMI() {
+                const downPayment = parseInt(dpInput.value);
+                const tenureMonths = parseInt(tenureInput.value);
+
+                dpValueSpan.textContent = downPayment.toLocaleString('en-IN');
+                tenureValueSpan.textContent = tenureMonths;
+
+                // Calculate loan amount (using standard price for full ownership EMI estimate)
+                const loanAmount = standardPrice - downPayment;
+                const monthlyRate = annualInterestRate / 12;
+
+                let emi;
+                if (loanAmount <= 0 || tenureMonths <= 0 || monthlyRate === 0) {
+                    emi = 0;
+                } else {
+                    // EMI formula: P * R * (1 + R)^N / ((1 + R)^N - 1)
+                    emi = loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths) / (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+                }
+
+                monthlyEmiSpan.textContent = Math.round(emi).toLocaleString('en-IN');
+            }
+
+            dpInput.addEventListener('input', calculateEMI);
+            tenureInput.addEventListener('input', calculateEMI);
+            calculateEMI(); // Initial calculation
+
+            // --- 5. Form Submission Handling ---
+            const interestForm = document.getElementById('interest-form');
+            const formMessage = document.getElementById('form-message');
+
+            interestForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formMessage.classList.remove('hidden', 'text-red-400');
+                formMessage.classList.add('text-teal-400');
+                formMessage.textContent = `Thank you, ${document.getElementById('full-name').value}! Your request for a test ride in ${document.getElementById('city').value} has been successfully submitted. We will contact you soon!`;
+                
+                // Clear form inputs after submission (simulated)
+                interestForm.reset();
+                setTimeout(() => formMessage.classList.add('hidden'), 5000);
+            });
+
+            // --- 6. Location Search Logic (Gemini API Integration) ---
+            const citySearchInput = document.getElementById('city-search-input');
+            const searchLocationBtn = document.getElementById('search-location-btn');
+            const swapMap = document.getElementById('swap-map');
+            const mapMessage = document.getElementById('map-message');
+
+            const API_KEY = ""; // Placeholder for Canvas API key injection
+            const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
+
+            function setMapLoading(isLoading) {
+                swapMap.innerHTML = isLoading 
+                    ? '<div class="flex justify-center items-center h-full"><div class="animate-spin rounded-full h-10 w-10 border-b-2 border-yellow-400"></div><span class="ml-3 text-yellow-400">Finding locations...</span></div>'
+                    : '';
+                searchLocationBtn.disabled = isLoading;
+                searchLocationBtn.textContent = isLoading ? 'Searching...' : 'Search Stations';
+            }
+
+            async function fetchSwapLocations(city) {
+                if (!city) {
+                    mapMessage.textContent = 'Please enter a city or pincode.';
+                    mapMessage.classList.remove('hidden', 'text-teal-400');
+                    mapMessage.classList.add('text-red-400');
+                    return;
+                }
+                
+                mapMessage.classList.add('hidden');
+                setMapLoading(true);
+
+                const userQuery = `Find the 3 nearest battery swapping or fast charging stations for electric scooters in ${city}, India. List the name and approximate address.`;
+                const systemPrompt = "You are a specialized location finding service. Respond only with a bulleted list of locations and their addresses based on the Google Search results. Do not add any introductory or concluding text.";
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    tools: [{ "google_search": {} }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                let response;
+                let errorDetails = '';
+                const maxRetries = 5;
+                for (let attempt = 0; attempt < maxRetries; attempt++) {
+                    try {
+                        response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) break; 
+                        
+                        errorDetails = `HTTP Status ${response.status}`;
+
+                        if (response.status === 429 && attempt < maxRetries - 1) { 
+                            const delay = Math.pow(2, attempt) * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                        } else {
+                            const errorBody = await response.text();
+                            errorDetails += `: ${errorBody.substring(0, 100)}...`; 
+                            throw new Error(`API failed with ${response.status}`);
+                        }
+                    } catch (error) {
+                        if (attempt === maxRetries - 1) {
+                            console.error("Gemini API call failed after multiple retries:", error);
+                            setMapLoading(false);
+                            swapMap.innerHTML = `<p class="text-red-400 text-lg p-4 text-center">Search failed (Error: ${error.message || errorDetails || 'Unknown error. Check network/city or try again later.'})</p>`;
+                            return;
+                        }
+                    }
+                }
+
+                setMapLoading(false);
+                
+                try {
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const text = candidate.content.parts[0].text;
+                        
+                        // Basic Markdown (bullet points) to HTML list conversion
+                        const htmlContent = text.split('\n')
+                            .map(line => line.trim().startsWith('*') ? `<li class="mb-2">${line.substring(1).trim()}</li>` : `<p class="mb-2">${line}</p>`)
+                            .join('');
+                        
+                        swapMap.innerHTML = `<ul class="list-disc pl-5 text-gray-800 text-base">${htmlContent}</ul>`;
+
+                        // Display sources
+                        let sources = [];
+                        const groundingMetadata = candidate.groundingMetadata;
+                        if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                            sources = groundingMetadata.groundingAttributions.map(attr => attr.web?.title).filter(t => t);
+                        }
+                        if (sources.length > 0) {
+                             mapMessage.classList.remove('hidden', 'text-red-400');
+                             mapMessage.classList.add('text-teal-400');
+                             mapMessage.innerHTML = 'Sources: ' + sources.slice(0, 2).join(', ') + (sources.length > 2 ? '...' : '');
+                        }
+
+                    } else {
+                        swapMap.innerHTML = '<p class="text-gray-600 text-lg p-4 text-center">No specific swap or charging stations found for this location.</p>';
+                    }
+
+                } catch (e) {
+                    console.error("Error processing Gemini API response:", e);
+                    swapMap.innerHTML = '<p class="text-red-400 text-lg p-4 text-center">An error occurred while displaying results.</p>';
+                }
+            }
+
+            searchLocationBtn.addEventListener('click', () => {
+                const city = citySearchInput.value.trim();
+                fetchSwapLocations(city);
+            });
+            
+            // Re-adding initial placeholder text for map on load
+            swapMap.innerHTML = '<p class="text-gray-600 text-lg text-center p-8">Search a city above to find the nearest EV swapping or charging stations in India.</p>';
+
+
+            // --- 7. Dynamic Color Selection (Integrated with Image/Video Swap) ---
+            const colorOptions = document.querySelectorAll('.color-option');
+            // Hero section elements
+            const heroImage = document.getElementById('scooter-image');
+            const heroVideo = document.getElementById('scooter-video');
+            // Features section elements (newly added)
+            const featureImage = document.getElementById('feature-scooter-image');
+            const featureVideo = document.getElementById('feature-scooter-video');
+
+            const colorImageMap = {
+                '#0f172a': 'VX2-Plus-Black.svg',      // Pearl Black
+                '#2563eb': 'VX2-Plus-Blue.svg',       // Nexus Blue
+                '#b91c1c': 'VX2-Plus-Red.svg',        // Pearl Red
+                '#f8fafc': 'VX2-Plus-White.svg',      // Matte White
+                '#64748b': 'VX2-Plus-Gray.svg',       // Metallic Grey
+                '#ea580c': 'VX2-Plus-Orange.svg',     // Autumn Orange
+                '#facc15': 'VX2-Plus-Yellow.svg'      // Sunburst Yellow
+            };
+
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    colorOptions.forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
+
+                    const selectedColor = option.getAttribute('data-color');
+                    const imageURL = colorImageMap[selectedColor.toLowerCase()];
+
+                    // Function to handle the image/video swap for a pair
+                    function swapMedia(videoEl, imageEl, url) {
+                        if (url) {
+                            // Hide video and show image for selected color
+                            videoEl.classList.add('hidden');
+                            imageEl.src = url;
+                            imageEl.classList.remove('hidden');
+                            imageEl.style.opacity = 0;
+                            setTimeout(() => {
+                                imageEl.style.opacity = 1;
+                            }, 200);
+                        } else {
+                            // No valid color image: hide image, show video
+                            imageEl.classList.add('hidden');
+                            videoEl.classList.remove('hidden');
+                        }
+                    }
+
+                    // 1. Update Hero Section
+                    swapMedia(heroVideo, heroImage, imageURL);
+                    
+                    // 2. Update Features Section
+                    swapMedia(featureVideo, featureImage, imageURL);
+
+
+                    // Update background and font colors
+                    let bgColor = '';
+                    let textColor = '';
+                    switch (selectedColor.toLowerCase()) {
+                        case '#0f172a': bgColor = '#e0e7ef'; textColor = '#0f172a'; break;
+                        case '#2563eb': bgColor = '#dbeafe'; textColor = '#1e3a8a'; break;
+                        case '#b91c1c': bgColor = '#fee2e2'; textColor = '#7f1d1d'; break;
+                        case '#f8fafc': bgColor = '#f8fafc'; textColor = '#1e293b'; break;
+                        case '#64748b': bgColor = '#f1f5f9'; textColor = '#334155'; break;
+                        case '#ea580c': bgColor = '#ffedd5'; textColor = '#9a3412'; break;
+                        case '#facc15': bgColor = '#fef9c3'; textColor = '#854d0e'; break;
+                        default: bgColor = '#ffffff'; textColor = selectedColor;
+                    }
+
+                    document.body.style.backgroundColor = bgColor;
+                    document.querySelectorAll('h1, h2, h3, p, a, label').forEach(el => {
+                        el.style.color = textColor;
+                        if (selectedColor.toLowerCase() === '#f8fafc') {
+                            el.style.textShadow = '0 0 4px rgba(0,0,0,0.25)';
+                        } else {
+                            el.style.textShadow = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
